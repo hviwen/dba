@@ -107,3 +107,22 @@ select count(distinct (user.city)) citys from user;
 
 -- 查询所有城市名称
 select distinct (user.city) from user;
+
+-- 查询北京用户的平均分数
+select avg(user.score) as avg_score
+from user
+where user.city = '北京';
+
+-- 查询北京用户的总分数
+select sum(user.score) as total_scores
+from user
+where user.city = '北京';
+
+-- 查询北京用户的最高分和最低分
+select max(user.score) as max_score, min(user.score) as min_score
+from user
+where user.city = '北京';
+
+select max(user.score) - max(user.score) as score_diff
+from user
+where user.city = '北京';
